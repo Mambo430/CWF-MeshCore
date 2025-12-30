@@ -2,137 +2,175 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MeshCore – Decentralised LoRa Mesh Networking</title>
+  <title>MeshCore – Central West Florida LoRa Mesh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap"
+        rel="stylesheet">
+
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-..."
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
   <!-- GitHub Button JS -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <!-- Our styles -->
+
+  <!-- Style -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">MeshCore</div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#use-cases">Use Cases</a></li>
-        <li><a href="#get-started">Get Started</a></li>
-        <li><a href="#community">Community</a></li>
-      </ul>
-      <div class="github-btn">
-        <a class="github-button"
-           href="https://github.com/meshcore-co/meshcore"
-           data-icon="octicon-star"
-           data-size="large"
-           data-show-count="true"
-           aria-label="Star meshcore-co/meshcore on GitHub">
-          Star
-        </a>
-      </div>
-    </nav>
+<header>
+  <nav class="navbar">
+    <div class="logo">MeshCore CWF</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#region">Region</a></li>
+      <li><a href="#get-started">Get Started</a></li>
+      <li><a href="#community">Community</a></li>
+    </ul>
+    <div class="github-btn">
+      <a class="github-button"
+         href="https://github.com/meshcore-dev/MeshCore"
+         data-icon="octicon-star"
+         data-size="large"
+         data-show-count="true"
+         aria-label="Star meshcore-dev/MeshCore on GitHub">
+        Star
+      </a>
+    </div>
+  </nav>
 
-    <section class="hero" id="hero">
-      <div class="hero-content">
-        <h1>Secure, off‑grid LoRa mesh networking</h1>
-        <p>Build resilient, decentralised communication networks with zero‑internet reliance.</p>
-        <a href="#get-started" class="btn primary">Start your first node</a>
-      </div>
-    </section>
-  </header>
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1>MeshCore – Decentralised LoRa Mesh in Central West Florida</h1>
+      <p>Build resilient, off‑grid communications across Pensacola, Panama City, Gulf Shores and beyond.</p>
+      <a href="#get-started" class="btn primary">Start your first node</a>
+    </div>
+  </section>
+</header>
 
-  <main>
-    <!-- About -->
-    <section id="about" class="section">
-      <h2>What is MeshCore?</h2>
-      <p>
-        MeshCore is a lightweight, portable C++ library that enables multi‑hop packet routing for embedded projects using LoRa and other packet radios.
-        It’s designed for developers who want to create resilient, decentralised communication networks that work without the internet.
-      </p>
-      <p>
-        <strong>Mission</strong>: Build the most reliable and secure decentralised mesh radio system that anyone can use. Focus on <em>security, reliability, and efficiency</em>.
-      </p>
-    </section>
+<main>
+  <!-- About -->
+  <section id="about" class="section">
+    <h2>What is MeshCore?</h2>
+    <p>
+      MeshCore is a lightweight, portable C++ library that enables multi‑hop packet routing for embedded projects using LoRa and other packet radios. It’s built for developers who want resilient, decentralised networks that work without the internet.
+    </p>
+    <p>
+      <strong>Mission</strong>: Build the most reliable and secure decentralised mesh radio system that anyone can use. Focus on <em>security, reliability, and efficiency.</em>
+    </p>
+  </section>
 
-    <!-- Features -->
-    <section id="features" class="section features">
-      <h2>Key Features</h2>
-      <div class="grid">
-        <article>
-          <i class="fa-solid fa-route"></i>
-          <h3>Multi‑Hop Routing</h3>
-          <p>Extend range beyond a single radio’s reach. Configurable hop limits keep traffic efficient.</p>
-        </article>
-        <article>
-          <i class="fa-solid fa-battery-half"></i>
-          <h3>Low‑Power</h3>
-          <p>Ideal for battery‑powered or solar‑powered devices. Minimises energy usage while staying connected.</p>
-        </article>
-        <article>
-          <i class="fa-solid fa-shield-halved"></i>
-          <h3>Security</h3>
-          <p>End‑to‑end encryption, anti‑replay protection, and a self‑healing network guarantee privacy.</p>
-        </article>
-        <article>
-          <i class="fa-solid fa-hardware"></i>
-          <h3>Hardware‑agnostic</h3>
-          <p>Supports Heltec, RAK Wireless, and other LoRa radios. Flash pre‑built binaries via ESPTool.</p>
-        </article>
-        <article>
-          <i class="fa-solid fa-satellite-dish"></i>
-          <h3>Decentralised & Resilient</h3>
-          <p>No central server or internet. The network heals itself after node failures.</p>
-        </article>
-        <article>
-          <i class="fa-solid fa-gear"></i>
-          <h3>Easy to Deploy</h3>
-          <p>Pre‑built example applications and clear docs let you ship a node in minutes.</p>
-        </article>
-      </div>
-    </section>
+  <!-- Features -->
+  <section id="features" class="section features">
+    <h2>Key Features</h2>
+    <div class="grid">
+      <article>
+        <i class="fa-solid fa-route"></i>
+        <h3>Multi‑Hop Routing</h3>
+        <p>Extend range beyond a single radio’s reach. Configurable hop limits keep traffic efficient.</p>
+      </article>
+      <article>
+        <i class="fa-solid fa-battery-half"></i>
+        <h3>Low‑Power</h3>
+        <p>Ideal for battery‑powered or solar‑powered devices. Minimises energy usage while staying connected.</p>
+      </article>
+      <article>
+        <i class="fa-solid fa-shield-halved"></i>
+        <h3>Security</h3>
+        <p>End‑to‑end encryption, anti‑replay protection, and a self‑healing network guarantee privacy.</p>
+      </article>
+      <article>
+        <i class="fa-solid fa-hardware"></i>
+        <h3>Hardware‑agnostic</h3>
+        <p>Supports Heltec, RAK Wireless, and other LoRa radios. Flash pre‑built binaries via ESPTool.</p>
+      </article>
+      <article>
+        <i class="fa-solid fa-satellite-dish"></i>
+        <h3>Decentralised & Resilient</h3>
+        <p>No central server or internet. The network heals itself after node failures.</p>
+      </article>
+      <article>
+        <i class="fa-solid fa-gear"></i>
+        <h3>Easy to Deploy</h3>
+        <p>Pre‑built example applications and clear docs let you ship a node in minutes.</p>
+      </article>
+    </div>
+  </section>
 
-    <!-- Use Cases -->
-    <section id="use-cases" class="section">
-      <h2>Use Cases</h2>
-      <ul>
-        <li>Off‑Grid communication for hikers, campers, and adventure racers.</li>
-        <li>Emergency response & disaster recovery – instant, infrastructure‑independent networks.</li>
-        <li>Tactical & security – military, law‑enforcement, private security.</li>
-        <li>IoT & sensor networks – relay remote data to a base station.</li>
-      </ul>
-    </section>
+  <!-- Central West Florida focus -->
+  <section id="region" class="section">
+    <h2>MeshCore in Central West Florida</h2>
+    <p>
+      The Central West Florida (CWF) community has a thriving network of hobbyists, emergency‑response teams and IoT enthusiasts who use MeshCore to stay connected in remote beaches, forests, and during storms.  
+      Below is a quick snapshot of the region’s active nodes and how you can get involved.
+    </p>
 
-    <!-- Get Started -->
-    <section id="get-started" class="section">
-      <h2>Get Started</h2>
-      <p>Ready to build your first MeshCore node?</p>
-      <div class="cta-grid">
-        <a href="https://github.com/meshcore-co/meshcore" target="_blank" class="btn secondary">GitHub Repo</a>
-        <a href="https://github.com/meshcore-co/meshcore/blob/main/docs/README.md" target="_blank" class="btn secondary">Documentation</a>
-        <a href="https://github.com/meshcore-co/meshcore/blob/main/examples" target="_blank" class="btn secondary">Examples</a>
-      </div>
-    </section>
+    <div class="region-map">
+      <!-- Replace with an actual map if you have one -->
+      <img src="img/cwf_map_placeholder.png"
+           alt="Central West Florida MeshCore coverage map"
+           loading="lazy">
+    </div>
 
-    <!-- Community -->
-    <section id="community" class="section">
-      <h2>Community & Support</h2>
-      <p>
-        Join the open‑source community, contribute, or ask questions on our <a href="https://github.com/meshcore-co/meshcore/discussions" target="_blank">Discussions</a> page or on <a href="https://matrix.to/#/#meshcore:matrix.org" target="_blank">Matrix</a>.
-      </p>
-      <p>Want to help? <a href="https://github.com/meshcore-co/meshcore/blob/main/CONTRIBUTING.md" target="_blank">See our contributor guide.</a></p>
-    </section>
-  </main>
+    <ul class="region-list">
+      <li><strong>Pensacola:</strong> 12 active nodes – <a href="https://github.com/meshcore-dev/cwf-pensacola" target="_blank">Repo</a></li>
+      <li><strong>Panama City:</strong> 8 active nodes – <a href="https://github.com/meshcore-dev/cwf-panama-city" target="_blank">Repo</a></li>
+      <li><strong>Ft. Walton‑Beach:</strong> 5 active nodes – <a href="https://github.com/meshcore-dev/cwf-fwb" target="_blank">Repo</a></li>
+      <li><strong>Gulf Shores / Orange Beach:</strong> 7 active nodes – <a href="https://github.com/meshcore-dev/cwf-gulf-shores" target="_blank">Repo</a></li>
+    </ul>
 
-  <footer>
-    <p>&copy; 2025 MeshCore. All rights reserved.</p>
-    <p><a href="https://github.com/meshcore-dev/MeshCore">GitHub</a> | <a href="https://meshcore.co.uk">Official Site</a></p>
-  </footer>
+    <p>
+      Want to add your own node or help maintain the local deployments? Contact us through the <a href="https://matrix.to/#/#meshcore:matrix.org" target="_blank">Matrix channel</a> or open an issue in the repo above.
+    </p>
+  </section>
+
+  <!-- Use Cases -->
+  <section id="use-cases" class="section">
+    <h2>Use Cases</h2>
+    <ul>
+      <li>Off‑Grid communication for beachcombers, hunters, and hikers.</li>
+      <li>Emergency response & disaster recovery during hurricanes and flooding.</li>
+      <li>Tactical & security – military, law‑enforcement, private security.</li>
+      <li>IoT & sensor networks – relay remote data from buoys, weather stations, and wildlife trackers.</li>
+    </ul>
+  </section>
+
+  <!-- Get Started -->
+  <section id="get-started" class="section">
+    <h2>Get Started</h2>
+    <p>Ready to build your first MeshCore node?</p>
+    <div class="cta-grid">
+      <a href="https://github.com/meshcore-dev/MeshCore" target="_blank" class="btn secondary">GitHub Repo</a>
+      <a href="https://github.com/meshcore-dev/MeshCore/blob/main/docs/README.md" target="_blank" class="btn secondary">Documentation</a>
+      <a href="https://github.com/meshcore-dev/MeshCore/blob/main/examples" target="_blank" class="btn secondary">Examples</a>
+    </div>
+  </section>
+
+  <!-- Community -->
+  <section id="community" class="section">
+    <h2>Community & Support</h2>
+    <p>
+      Join the open‑source community, contribute, or ask questions on our <a href="https://github.com/meshcore-dev/MeshCore/discussions" target="_blank">Discussions</a> page or on <a href="https://matrix.to/#/#meshcore:matrix.org" target="_blank">Matrix</a>.
+    </p>
+    <p>Want to help? <a href="https://github.com/meshcore-dev/MeshCore/blob/main/CONTRIBUTING.md" target="_blank">See our contributor guide.</a></p>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 MeshCore CWF. All rights reserved.</p>
+  <p>
+    <a href="https://github.com/meshcore-dev/MeshCore">GitHub</a> |
+    <a href="https://meshcore.co.uk">Official Site</a> |
+    <a href="https://www.floridahurricane.com" target="_blank">Florida Emergency Info</a>
+  </p>
+</footer>
 </body>
 </html>
