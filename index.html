@@ -140,6 +140,71 @@
       (<a href="https://github.com/flmesh" target="_blank">https://github.com/flmesh</a>) or simply drop by the MeshCore Discord.
     </p>
   </section>
+
+    <!-- FAQ -->
+  <section id="faq" class="section">
+    <h2>Frequently Asked Questions</h2>
+
+    <p><strong>Q: What do you need to start using MeshCore?</strong></p>
+    <p>A: Everything you need for MeshCore is available at:</p>
+    <ul>
+      <li><a href="https://meshcore.co.uk/" target="_blank" rel="noopener">Main web site</a></li>
+      <li><a href="https://flasher.meshcore.co.uk/" target="_blank" rel="noopener">Firmware Flasher</a></li>
+      <li><a href="https://meshcore.co.uk/apps.html" target="_blank" rel="noopener">Phone Client Applications</a></li>
+      <li><a href="https://github.com/ripplebiz/MeshCore" target="_blank" rel="noopener">MeshCore Firmware GitHub</a></li>
+    </ul>
+
+    <p><em>NOTE:</em> Andy Kirby has a very useful intro video for beginners.</p>
+
+    <hr>
+
+    <p><strong>1.2.1. Hardware</strong></p>
+    <p>MeshCore is available on a variety of 433 MHz, 868 MHz and 915 MHz LoRa devices.  
+    Examples: Lilygo T‑Deck, T‑Pager, RAK Wireless WisBlock RAK4631 (19003, 19007, 19026), Heltec V3, Xiao S3 WIO, Xiao C3, Heltec T114, Station G2, Nano G2 Ultra, Seeed Studio T1000‑E.  
+    More devices are added regularly.</p>
+
+    <p>For an up‑to‑date list of supported devices, please go to <a href="https://flasher.meshcore.co.uk/" target="_blank" rel="noopener">https://flasher.meshcore.co.uk/</a>.</p>
+
+    <p>To use MeshCore without a phone as the client interface, you can run MeshCore on a Lilygo T‑Deck, T‑Deck Plus, T‑Pager, T‑Watch or T‑Display Pro.  
+    MeshCore Ultra firmware running on these devices is a complete off‑grid, secure communication solution.</p>
+
+    <hr>
+
+    <p><strong>1.2.2. Firmware</strong></p>
+    <p>MeshCore has four firmware types that are not available on other LoRa systems.  
+    (The detailed list is on the <a href="https://flasher.meshcore.co.uk/" target="_blank" rel="noopener">Firmware Flasher</a> page.)</p>
+
+    <p><strong>1.2.3. Companion Radio Firmware</strong></p>
+    <p>Companion radios are for connecting to the Android app or web app as a messenger client.  
+    Two companion radio firmware versions:</p>
+    <ul>
+      <li><strong>BLE Companion</strong> – runs on a supported LoRa device and connects to a smart device running the Android or iOS MeshCore client over BLE. <a href="https://meshcore.co.uk/apps.html" target="_blank" rel="noopener">https://meshcore.co.uk/apps.html</a></li>
+      <li><strong>USB Serial Companion</strong> – runs on a supported LoRa device and connects to a smart device or computer over USB Serial running the MeshCore web client. <a href="https://meshcore.liamcottle.net/#/" target="_blank" rel="noopener">https://meshcore.liamcottle.net/#/</a> <a href="https://client.meshcore.co.uk/tabs/devices" target="_blank" rel="noopener">https://client.meshcore.co.uk/tabs/devices</a></li>
+    </ul>
+
+    <hr>
+
+    <p><strong>1.2.4. Repeater</strong></p>
+    <p>Repeaters are used to extend the range of a MeshCore network.  
+    Repeater firmware runs on the same devices that run client firmware.  
+    A repeater forwards MeshCore packets only to the intended destination, not every packet it receives (unlike many other LoRa mesh systems).</p>
+
+    <p>A repeater can be remotely administered with a Lilygo T‑Deck running MeshCore firmware with remote‑admin features unlocked, or from a BLE Companion client connected to a smartphone running the MeshCore app.</p>
+
+    <hr>
+
+    <p><strong>1.2.5. Room Server</strong></p>
+    <p>A room server is a simple BBS‑style server for sharing posts.  
+    T‑Deck devices running MeshCore firmware or a BLE Companion client connected to a smartphone running the MeshCore app can connect to a room server.</p>
+
+    <p>Room servers store message history on the server and push stored messages to users.  
+    This lets roaming users come back later and retrieve message history—much like an email server.</p>
+
+    <p>When a client logs into a room server, the client will receive the last 32 unseen messages.  
+    While a room server can be set to “repeat on”, that mode is not recommended because it lacks the full set of repeater and remote‑admin features that only exist in the repeater firmware.</p>
+
+    <p>The recommendation is to run repeater and room server on separate devices for the best experience.</p>
+  </section>
   
   <!-- Use Cases -->
   <section id="use-cases" class="section">
