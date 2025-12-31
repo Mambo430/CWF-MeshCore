@@ -58,7 +58,7 @@ a:hover { text-decoration: underline; }
 /*------------------------------------------
    Hero
 ------------------------------------------*/
-.hero {
+/*.hero {
   height: 65vh; min-height: 400px;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: #fff;
@@ -66,7 +66,26 @@ a:hover { text-decoration: underline; }
   text-align: center; padding: 0 1rem;
 }
 .hero-content h1 { font-size: 3rem; margin-bottom: 1rem; }
-.hero-content p { font-size: 1.25rem; margin-bottom: 1.5rem; }
+.hero-content p { font-size: 1.25rem; margin-bottom: 1.5rem; }*/
+
+.hero {
+  /* Height can be fixed or viewport‑based */
+  height: 60vh;             /* adjust as needed */
+  background-image: url('img/hero.jpg');
+  background-size: cover;    /* cover entire area */
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;       /* for overlay positioning */
+  color: #fff;              /* default text color on image */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  text-align:center;
+  padding: 0 1rem;
+}
 
 /*------------------------------------------
    Sections
