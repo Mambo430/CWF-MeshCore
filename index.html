@@ -141,7 +141,52 @@
     </p>
   </section>
 
-    <!-- FAQ -->
+  <!-- Roles & Radio Settings -->
+  <section id="roles" class="section">
+    <h2>Node Roles & Radio Settings</h2>
+
+    <!-- ----------  Roles ---------- -->
+    <h3>Roles</h3>
+    <ul class="roles-list" style="list-style-type:none; padding-left:0;">
+      <li><strong>Companion:</strong> Intended role for end‑user devices that provide an interface via the phone or web app (via BLE or USB).</li>
+      <li><strong>Repeater:</strong> Nodes in this role extend the range of a MeshCore network. They <em>do not</em> forward or retransmit every packet they receive.</li>
+      <li><strong>Room Server:</strong> Turns the node into a simple BBS server for sharing posts. Room servers store message history on them and push the stored messages to users, allowing roaming users to come back later and retrieve history.</li>
+      <li><strong>Room‑Repeater:</strong> A combination of Room Server and Repeater roles. Install the Room Server, then enable the repeater role via the <code>set repeat {on|off}</code> command.</li>
+    </ul>
+
+    <!-- ----------  Radio Settings ---------- -->
+    <h3>Radio Settings (USA/Canada – Recommended)</h3>
+    <p>Use these settings to connect to other nodes in our area. More information can be found in the <a href="https://meshcore.co.uk/docs" target="_blank" rel="noopener">MeshCore documentation</a>.</p>
+
+    <table class="radio-settings" style="width:100%; max-width:480px; border-collapse:collapse; margin-top:1rem;">
+      <thead>
+        <tr style="background:#f5f5f5;">
+          <th style="text-align:left; padding:8px; border:1px solid #ddd;">Setting</th>
+          <th style="text-align:left; padding:8px; border:1px solid #ddd;">Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:8px; border:1px solid #ddd;">Frequency</td>
+          <td style="padding:8px; border:1px solid #ddd;">910.525 MHz</td>
+        </tr>
+        <tr>
+          <td style="padding:8px; border:1px solid #ddd;">Bandwidth</td>
+          <td style="padding:8px; border:1px solid #ddd;">62.5 kHz</td>
+        </tr>
+        <tr>
+          <td style="padding:8px; border:1px solid #ddd;">Spreading Factor</td>
+          <td style="padding:8px; border:1px solid #ddd;">7</td>
+        </tr>
+        <tr>
+          <td style="padding:8px; border:1px solid #ddd;">Coding Rate</td>
+          <td style="padding:8px; border:1px solid #ddd;">5</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  
+   <!-- FAQ -->
   <section id="faq" class="section">
     <h2>Frequently Asked Questions</h2>
 
