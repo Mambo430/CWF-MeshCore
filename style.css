@@ -131,3 +131,24 @@ footer a:hover { color: #ffc107; }
 .radio-settings th {
   background: #f5f5f5;
 }
+
+/* Section headline */
+#member-projects h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Project card styles */
+.project-list li h3 a {
+  font-size: 1.2rem;
+  color:#0054c8;
+  text-decoration:none;
+}
+.project-list li h3 a:hover {
+  text-decoration:underline;
+}
+
+.project-list li p {
+  margin-top: .5rem;
+  color:#444;
+}
