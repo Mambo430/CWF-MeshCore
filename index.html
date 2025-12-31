@@ -34,6 +34,7 @@
       <li><a href="#region">Region</a></li>
       <li><a href="#roles">Roles</a></li>
       <li><a href="#member-projects">Member Projects</a></li>
+      <li><a href="mqtt-config">MQTT Config</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#use-cases">Use Cases</a></li>
       <li><a href="#get-started">Get Started</a></li>
@@ -280,6 +281,27 @@
         </p>
       </li>
     </ul>
+  </section>
+
+    <!-- MQTT Server Configuration -->
+  <section id="mqtt-config" class="section">
+    <h2>MQTT Client Configuration</h2>
+
+    <p>
+      The following settings are used to connect to the public CWF MQTT broker that feeds the
+      MeshCore coverage map and wardriving data.  If you want to contribute your own
+      coverage data or debug logs, add these environment variables to your custom broker client).
+    </p>
+
+    <pre class="code-block">
+MCTOMQTT_MQTT1_ENABLED=true
+MCTOMQTT_MQTT1_SERVER=mcmqtt.jntconnections.com
+MCTOMQTT_MQTT1_PORT=443
+MCTOMQTT_MQTT1_TRANSPORT=websockets
+MCTOMQTT_MQTT1_USE_TLS=true
+MCTOMQTT_MQTT1_USE_AUTH_TOKEN=true
+MCTOMQTT_MQTT1_TOKEN_AUDIENCE=mcmqtt.jntconnections.com
+    </pre>
   </section>
   
    <!-- FAQ -->
