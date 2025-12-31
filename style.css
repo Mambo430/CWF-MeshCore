@@ -71,7 +71,7 @@ a:hover { text-decoration: underline; }
 .hero {
   /* Height can be fixed or viewport‑based */
   height: 60vh;             /* adjust as needed */
-  background-image: url('img/hero.jpg');
+  background-image: url('img/hero.png');
   background-size: cover;    /* cover entire area */
   background-position: center;
   background-repeat: no-repeat;
