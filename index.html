@@ -33,6 +33,7 @@
       <li><a href="#features">Features</a></li>
       <li><a href="#region">Region</a></li>
       <li><a href="#roles">Roles</a></li>
+      <li><a href="#member-projects">Member Projects</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#use-cases">Use Cases</a></li>
       <li><a href="#get-started">Get Started</a></li>
@@ -187,6 +188,98 @@
         </tr>
       </tbody>
     </table>
+  </section>
+
+    <!-- Member Projects -->
+  <section id="member-projects" class="section">
+    <h2>Member Projects</h2>
+
+    <p>The MeshCore ecosystem is growing thanks to a handful of community‑built tools.  
+    Below is a quick snapshot of the most popular open‑source projects you can fork, use or contribute to.</p>
+
+    <ul class="project-list" style="list-style:none; padding-left:0;">
+      <!-- SAME EAS Alerter -->
+      <li style="margin-bottom:1rem;">
+        <h3 style="margin:0 0 .25rem 0;">
+          <a href="https://github.com/Mambo430/MeshCore-SAME-EAS-Alerter"
+             target="_blank" rel="noopener">MeshCore SAME EAS Alerter</a>
+        </h3>
+        <p style="margin:0;">
+          A lightweight tool that forwards warnings, emergencies, or statements sent over the air to a local MeshCore network, without needing Wi‑Fi.  
+          It runs on a computer connected to an RTL SDR via USB and to a running MeshCore Companion node via serial or TCP.
+        </p>
+      </li>
+
+      <!-- meshcore‑cli -->
+      <li style="margin-bottom:1rem;">
+        <h3 style="margin:0 0 .25rem 0;">
+          <a href="https://github.com/meshcore-dev/meshcore-cli"
+             target="_blank" rel="noopener">meshcore‑cli</a>
+        </h3>
+        <p style="margin:0;">
+          CLI tool to interact with a companion radio node (MeshCore client) over BLE, TCP or serial.  
+          Supports both interactive mode and scripted commands.  
+          Note: only companion radios can be reached (repeater serial interfaces are not supported).
+        </p>
+      </li>
+
+      <!-- meshcore_py -->
+      <li style="margin-bottom:1rem;">
+        <h3 style="margin:0 0 .25rem 0;">
+          <a href="https://github.com/meshcore-dev/meshcore_py"
+             target="_blank" rel="noopener">meshcore_py</a>
+        </h3>
+        <p style="margin:0;">
+          Python library for interacting with MeshCore companion radio nodes.
+        </p>
+      </li>
+
+      <!-- meshcore-decoder -->
+      <li style="margin-bottom:1rem;">
+        <h3 style="margin:0 0 .25rem 0;">
+          <a href="https://github.com/michaelhart/meshcore-decoder"
+             target="_blank" rel="noopener">meshcore‑decoder</a>
+        </h3>
+        <p style="margin:0;">
+          TypeScript library that decodes MeshCore mesh packets with full cryptographic support, using WebAssembly (WASM) for Ed25519 key derivation.
+        </p>
+      </li>
+
+      <!-- meshcore-mqtt-broker -->
+      <li style="margin-bottom:1rem;">
+        <h3 style="margin:0 0 .25rem 0;">
+          <a href="https://github.com/michaelhart/meshcore-mqtt-broker"
+             target="_blank" rel="noopener">meshcore‑mqtt‑broker</a>
+        </h3>
+        <p style="margin:0;">
+          WebSocket‑based MQTT broker that authenticates clients via MeshCore public keys.
+        </p>
+      </li>
+
+      <!-- meshcoretomqtt -->
+      <li style="margin-bottom:1rem;">
+        <h3 style="margin:0 0 .25rem 0;">
+          <a href="https://github.com/Cisien/meshcoretomqtt"
+             target="_blank" rel="noopener">meshcoretomqtt</a>
+        </h3>
+        <p style="margin:0;">
+          Python script that forwards MeshCore debug / packet‑capture data to an MQTT broker.  
+          Requires a MeshCore repeater to be connected to a Raspberry Pi (or similar) that runs Python.
+        </p>
+      </li>
+
+      <!-- packet‑capture -->
+      <li style="margin-bottom:1rem;">
+        <h3 style="margin:0 0 .25rem 0;">
+          <a href="https://github.com/agessaman/meshcore-packet-capture"
+             target="_blank" rel="noopener">meshcore‑packet‑capture</a>
+        </h3>
+        <p style="margin:0;">
+          Stand‑alone Python script for capturing and analysing packets from MeshCore Companion radios only.  
+          Connects via BLE, serial or TCP, writes structured data to console, file and optionally an MQTT broker.
+        </p>
+      </li>
+    </ul>
   </section>
   
    <!-- FAQ -->
