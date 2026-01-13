@@ -508,25 +508,7 @@ MCTOMQTT_MQTT1_TOKEN_AUDIENCE=mcmqtt.jntconnections.com
       top: 0,
       behavior: 'smooth'
     });
-  });
-  
-/* Scroll‑to‑top on every internal link click */
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', event => {
-    // Let the default hash jump happen first
-    event.preventDefault();
-
-    // Then animate the jump
-    const target = document.getElementById(link.getAttribute('href').slice(1));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-
-    // Finally scroll to the very top of the document
-    backToTopBtn.click();   // re‑use the click handler
-  });
-});
-  
+  });  
 </script>
   
 <footer>
