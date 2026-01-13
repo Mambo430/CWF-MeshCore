@@ -486,7 +486,49 @@ MCTOMQTT_MQTT1_TOKEN_AUDIENCE=mcmqtt.jntconnections.com
   <button id="backToTop" class="back-to-top" aria-label="Back to top">
     ↑ Top
   </button>
+<script>
+  // Grab the button
+  const backToTopBtn = document.getElementById('backToTop');
 
+  // Threshold (in pixels) before the button appears
+  const SCROLL_THRESHOLD = 300;
+
+  /* --------‑ 1. Show / hide the button --------‑ */
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > SCROLL_THRESHOLD) {
+      backToTopBtn.classList.add('show');
+    } else {
+      backToTopBtn.classList.remove('show');
+    }
+  });
+
+  /* --------‑ 2. Click → scroll to top --------‑ */
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+  
+/* Scroll‑to‑top on every internal link click */
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', event => {
+    // Let the default hash jump happen first
+    event.preventDefault();
+
+    // Then animate the jump
+    const target = document.getElementById(link.getAttribute('href').slice(1));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Finally scroll to the very top of the document
+    backToTopBtn.click();   // re‑use the click handler
+  });
+});
+  
+</script>
+  
 <footer>
   <p>&copy; 2025 Florida MeshCore. All rights reserved.</p>
   <p>
