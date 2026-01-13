@@ -319,3 +319,38 @@ footer a:hover { color: #ffc107; }
     transform: rotate(-45deg) translate(5px, -5px);
   }
 }
+
+/* ---------- Back‑to‑Top button ----------
+   Keeps it out of the normal flow and shows it on scroll */
+.back-to-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 200;                    /* above the dropdown */
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: .375rem;
+  padding: .5rem .75rem;
+  font-size: 1rem;
+  cursor: pointer;
+  opacity: 0;                      /* hidden by default */
+  visibility: hidden;              /* screen‑reader friendly */
+  transition: opacity .3s ease, transform .3s ease;
+  transform: translateY(20px);      /* subtle slide‑up */
+  box-shadow: 0 4px 8px rgba(0,0,0,.15);
+}
+
+/* Hover/focus state */
+.back-to-top:hover,
+.back-to-top:focus {
+  background: var(--primary);
+  transform: translateY(0);
+}
+
+/* When the button has the “show” class it becomes visible */
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
