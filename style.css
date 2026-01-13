@@ -55,6 +55,68 @@ a:hover { text-decoration: underline; }
 .nav-links a:hover { color: var(--primary); }
 .github-btn { margin-left: 1rem; }
 
+/* ────────────────────────────────────────────────────────────────
+   Mobile‑ready Navbar (hamburger & dropdown)
+──────────────────────────────────────────────────────────────── */
+
+ /* 1️⃣  The hidden checkbox that drives the toggle */
+ .nav-toggle {
+   display: none;                 /* we’ll hide it – only its checked state matters */
+ }
+
+ /* 2️⃣  The hamburger icon – hidden on desktop, shown on mobile */
+ .menu-icon {
+   display: none;                 /* desktop: hidden */
+   flex-direction: column;        /* stack three bars */
+   gap: 0.15rem;                  /* space between bars */
+   cursor: pointer;
+ }
+
+ .menu-icon span {
+   display: block;
+   width: 25px;
+   height: 2px;
+   background: #333;
+   transition: transform 0.3s ease, opacity 0.3s ease;
+ }
+
+ /* 3️⃣  Responsive rules – mobile (≤ 768px) */
+ @media (max-width: 768px) {
+   /* Hide the normal horizontal menu */
+   .nav-links {
+     position: absolute;
+     top: 100%;              /* below the navbar */
+     left: 0;
+     right: 0;
+     background: #fff;
+     flex-direction: column;
+     gap: 0;                 /* links stacked vertically */
+     display: none;          /* collapsed by default */
+     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+   }
+
+   /* Show the hamburger icon */
+   .menu-icon {
+     display: flex;
+   }
+
+   /* When the checkbox is checked – show the menu */
+   .nav-toggle:checked ~ .nav-links {
+     display: flex;
+   }
+
+   /* Optional: turn the bars into an “X” when menu is open */
+   .nav-toggle:checked ~ .menu-icon span:nth-child(1) {
+     transform: rotate(45deg) translate(5px, 5px);
+   }
+   .nav-toggle:checked ~ .menu-icon span:nth-child(2) {
+     opacity: 0;
+   }
+   .nav-toggle:checked ~ .menu-icon span:nth-child(3) {
+     transform: rotate(-45deg) translate(5px, -5px);
+   }
+ }
+
 /*------------------------------------------
    Hero
 ------------------------------------------*/
