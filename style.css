@@ -368,3 +368,10 @@ footer a:hover { color: #ffc107; }
   width: auto;            /* Preserve aspect ratio */
   object-fit: contain;
 }
+
+/* ── Mobile‑specific tweak ── */
+@media (max-width: 480px) {
+  .logo img {
+    height: 1.6rem;       /* Smaller on tiny screens */
+  }
+}
