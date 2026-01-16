@@ -354,3 +354,17 @@ footer a:hover { color: #ffc107; }
   visibility: visible;
   transform: translateY(0);
 }
+/* ── Navbar logo ── */
+.logo {
+  display: flex;          /* Align image & text side‑by‑side */
+  align-items: center;    /* Vertically centre them */
+  gap: 0.5rem;            /* Space between image & text */
+  font-weight: 700;       /* Your existing style */
+  font-size: 1.2rem;      /* Adjust if you need */
+}
+
+.logo img {
+  height: 2.2rem;         /* Keep the image small & tidy */
+  width: auto;            /* Preserve aspect ratio */
+  object-fit: contain;
+}
