@@ -1,6 +1,6 @@
 # CWF-MeshCore
-This is the website for all things MeshCore for the Central West Florida Region.
-https://cwf-meshcore.pages.dev
+This is the website for all things MeshCore for Florida.
+https://cwf-meshcore.pages.dev or https://mc.fl.mesh.us
 
 # MeshCore Static Site
 
