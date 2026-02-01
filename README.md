@@ -1,6 +1,6 @@
 # CWF-MeshCore
 This is the website for all things MeshCore for Florida.
-https://mc.fl.mesh.us
+https://mc.flmesh.us
 
 # MeshCore Static Site
 
