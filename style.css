@@ -1,36 +1,43 @@
-/* ── Global ───────────────────────────────────────────────────── */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/*------------------------------------------
+   Global Reset & Typography
+------------------------------------------*/
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 :root {
-  --primary: #0d6efd;
+  --primary: #0d6efd;          /* Default blue – change to teal if you like */
   --secondary: #6c757d;
-  --accent: #009688;
+  --accent: #009688;           /* Gulf‑Coast teal – used for region highlights */
   --bg: #f8f9fa;
-  --bg-light: #fafafa;          /* ← added */
   --text: #222;
-  --link: var(--primary);       /* ← added */
-  --link-hover: #0056b3;        /* ← added */
-  --radius: .375rem;
 }
 
-/* ── Typography ───────────────────────────────────────────────────── */
 html { font-size: 16px; scroll-behavior: smooth; }
 body { font-family: 'Roboto', sans-serif; color: var(--text); line-height: 1.6; background: var(--bg); }
+
 h1, h2, h3 { font-family: 'Montserrat', sans-serif; color: var(--primary); margin-bottom: .5rem; }
 h1 { font-size: 2.8rem; }
 h2 { font-size: 2rem; }
 h3 { font-size: 1.4rem; }
-a { color: var(--link); text-decoration: underline; }
-a:hover, a:focus { color: var(--link-hover); text-decoration: none; }
 
-/* ── Buttons ───────────────────────────────────────────────────── */
-.btn { border-radius: var(--radius); padding: .5rem .75rem; cursor: pointer; }
-.github-btn { margin-left: 1rem; }
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-/* ── Navbar ───────────────────────────────────────────────────── */
+.btn {
+  display: inline-block;
+  padding: .75rem 1.5rem;
+  border-radius: .375rem;
+  font-weight: 600;
+  transition: background .3s, color .3s;
+}
+.btn.primary { background: var(--primary); color: #fff; }
+.btn.primary:hover { background: #0b5ed7; }
+
+.btn.secondary { background: var(--secondary); color: #fff; }
+.btn.secondary:hover { background: #5c636a; }
+
+/*------------------------------------------
+   Navbar
+------------------------------------------*/
 .navbar {
   display: flex;
   align-items: center;
@@ -42,84 +49,363 @@ a:hover, a:focus { color: var(--link-hover); text-decoration: none; }
   top: 0;
   z-index: 100;
 }
-
-/* ── Logo (only one rule – merge the two you had) ───────────────────── */
-.logo {
-  display: flex;          /* image + text */
-  align-items: center;    /* vertical centering */
-  gap: .5rem;
-  font-weight: 700;
-  font-size: 1.2rem;
-}
-.logo img {
-  height: 2.2rem;
-  width: auto;
-  object-fit: contain;
-}
-@media (max-width: 480px) {          /* mobile tweak */
-  .logo img { height: 1.6rem; }
-}
-
-/* ── Nav Links (desktop) ─────────────────────────────────────── */
+.logo { font-size: 1.25rem; font-weight: 700; }
 .nav-links { list-style: none; display: flex; gap: 1.25rem; }
 .nav-links a { color: #333; font-weight: 500; }
 .nav-links a:hover { color: var(--primary); }
+.github-btn { margin-left: 1rem; }
 
-/* ── Mobile Navbar (hamburger & dropdown) ───────────────────────────── */
-.nav-toggle { display: none; }
-.menu-icon { display: none; flex-direction: column; gap: .15rem; cursor: pointer; }
-.menu-icon span { display: block; width: 25px; height: 2px; background: #333; transition: .3s ease; }
+/* ────────────────────────────────────────────────────────────────
+   Mobile‑ready Navbar (hamburger & dropdown)
+──────────────────────────────────────────────────────────────── */
 
-@media (max-width: 768px) {
-  /* hide desktop menu */
-  .nav-links { display: none; position: absolute; top: 100%; right: 0; left: 0; background: #fff; flex-direction: column; align-items: center; min-width: 200px; box-shadow: 0 4px 8px rgba(0,0,0,.1); z-index: 101; }
+ /* 1️⃣  The hidden checkbox that drives the toggle */
+ .nav-toggle {
+   display: none;                 /* we’ll hide it – only its checked state matters */
+ }
 
-  /* show mobile menu when checkbox is checked */
-  .nav-toggle:checked ~ .nav-links { display: flex; }
+ /* 2️⃣  The hamburger icon – hidden on desktop, shown on mobile */
+ .menu-icon {
+   display: none;                 /* desktop: hidden */
+   flex-direction: column;        /* stack three bars */
+   gap: 0.15rem;                  /* space between bars */
+   cursor: pointer;
+ }
 
-  /* hamburger icon */
-  .menu-icon { display: flex; }
+ .menu-icon span {
+   display: block;
+   width: 25px;
+   height: 2px;
+   background: #333;
+   transition: transform 0.3s ease, opacity 0.3s ease;
+ }
 
-  /* X‑animation */
-  .nav-toggle:checked ~ .menu-icon span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
-  .nav-toggle:checked ~ .menu-icon span:nth-child(2) { opacity: 0; }
-  .nav-toggle:checked ~ .menu-icon span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
-}
+ /* 3️⃣  Responsive rules – mobile (≤ 768px) */
+ @media (max-width: 768px) {
+   /* Hide the normal horizontal menu */
+   .nav-links {
+     position: absolute;
+     top: 100%;              /* below the navbar */
+     left: 0;
+     right: 0;
+     background: #fff;
+     flex-direction: column;
+     gap: 0;                 /* links stacked vertically */
+     display: none;          /* collapsed by default */
+     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+   }
 
-/* ── Hero ───────────────────────────────────────────────────── */
-.hero {
-  height: 60vh;
-  background: url('img/hero.png') center/cover no-repeat;
+   /* Show the hamburger icon */
+   .menu-icon {
+     display: flex;
+   }
+
+   /* When the checkbox is checked – show the menu */
+   .nav-toggle:checked ~ .nav-links {
+     display: flex;
+   }
+
+   /* Optional: turn the bars into an “X” when menu is open */
+   .nav-toggle:checked ~ .menu-icon span:nth-child(1) {
+     transform: rotate(45deg) translate(5px, 5px);
+   }
+   .nav-toggle:checked ~ .menu-icon span:nth-child(2) {
+     opacity: 0;
+   }
+   .nav-toggle:checked ~ .menu-icon span:nth-child(3) {
+     transform: rotate(-45deg) translate(5px, -5px);
+   }
+ }
+
+/*------------------------------------------
+   Hero
+------------------------------------------*/
+/*.hero {
+  height: 65vh; min-height: 400px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: #fff;
   display: flex; align-items: center; justify-content: center;
-  text-align: center;
+  text-align: center; padding: 0 1rem;
+}
+.hero-content h1 { font-size: 3rem; margin-bottom: 1rem; }
+.hero-content p { font-size: 1.25rem; margin-bottom: 1.5rem; }*/
+
+.hero {
+  /* Height can be fixed or viewport‑based */
+  height: 60vh;             /* adjust as needed */
+  background-image: url('img/hero.png');
+  background-size: cover;    /* cover entire area */
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;       /* for overlay positioning */
+  color: #fff;              /* default text color on image */
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 0 1rem;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  text-align:center;
   padding: 0 1rem;
 }
-.hero-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
 .hero-content h1 { font-size: 3rem; margin-bottom: 1rem; }
 .hero-content p { font-size: 1.25rem; margin-bottom: 1.5rem; }
 
-/* ── Sections ───────────────────────────────────────────────────── */
-.section { max-width: 960px; margin: 4rem auto; padding: 0 1rem; text-align: center; }
-.section h2 { margin-bottom: 1.5rem; }
+/*------------------------------------------
+   Sections
+------------------------------------------*/
+.section { max-width: 960px; margin: 4rem auto; padding: 0 1rem; }
+.section h2 { text-align: center; margin-bottom: 1.5rem; }
 
-/* ── Participate section ───────────────────────────────────────────── */
+.features .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+.features article {
+  background: #fff; padding: 1.5rem;
+  border-radius: .5rem; box-shadow: 0 2px 6px rgba(0,0,0,.1);
+  text-align: center;
+}
+.features article i { font-size: 2.5rem; color: var(--primary); margin-bottom: .75rem; }
+
+.region-map img { width: 100%; border-radius: .5rem; box-shadow: 0 2px 6px rgba(0,0,0,.1); }
+.region-list { list-style: disc inside; margin-top: 1rem; }
+
+.region-link {
+  color:#0054c8;          /* same as your primary link colour */
+  text-decoration:none;
+}
+.region-link:hover {
+  text-decoration:underline;
+}
+
+.cta-grid { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+
+/*------------------------------------------
+   Footer
+------------------------------------------*/
+footer {
+  background: #343a40; color: #adb5bd;
+  padding: 1.5rem 1rem; text-align: center;
+}
+footer a { color: #fff; }
+footer a:hover { color: #ffc107; }
+
+/*------------------------------------------
+   Responsive Tweaks
+------------------------------------------*/
+@media (max-width: 768px) {
+  .hero-content h1 { font-size: 2.5rem; }
+  .hero-content p { font-size: 1.15rem; }
+}
+
+#faq hr {
+  margin: 1.5rem 0;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+.map-links a {
+  margin: 0 .5rem;
+}
+
+.roles-list li {
+  margin-bottom: 0.75rem;
+}
+
+.radio-settings th, .radio-settings td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.radio-settings th {
+  background: #f5f5f5;
+}
+
+/* Section headline */
+#member-projects h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Project card styles */
+.project-list li h3 a {
+  font-size: 1.2rem;
+  color:#0054c8;
+  text-decoration:none;
+}
+.project-list li h3 a:hover {
+  text-decoration:underline;
+}
+
+.project-list li p {
+  margin-top: .5rem;
+  color:#444;
+}
+
+/* ------------------------------------------------------------------
+   Section headline
+   ------------------------------------------------------------------*/
+#mqtt-config h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* ------------------------------------------------------------------
+   Pre‑formatted code block
+   ------------------------------------------------------------------*/
+.code-block {
+  background: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1rem;
+  overflow-x: auto;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 0.95rem;
+  white-space: pre-wrap;   /* keeps line‑breaks but allows wrap if the viewport is narrow */
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   Mobile Navbar – right‑aligned dropdown, centered links
+──────────────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  /* Hide the regular horizontal list */
+  .nav-links {
+    display: none;                /* collapsed by default */
+    position: absolute;
+    top: 100%;                    /* just below the navbar */
+    right: 0;                     /* align to the right edge of the navbar */
+    background: #fff;
+    flex-direction: column;
+    align-items: center;          /* center each link horizontally */
+    min-width: 200px;             /* adjust as needed */
+    box-shadow: 0 4px 8px rgba(0,0,0,.1);
+    z-index: 101;                 /* above the button */
+  }
+
+  /* Show the menu when the checkbox is checked */
+  .nav-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+
+  /* Links inside the dropdown – keep them centered */
+  .nav-links a {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    color: #333;
+  }
+  .nav-links a:hover {
+    color: var(--primary);
+  }
+
+  /* Hamburger icon stays in the normal flow – after the star */
+  .menu-icon {
+    display: flex;                /* show on mobile */
+  }
+
+  /* Optional: keep the X‑animation for the hamburger bars */
+  .nav-toggle:checked ~ .menu-icon span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .nav-toggle:checked ~ .menu-icon span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle:checked ~ .menu-icon span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+
+/* ---------- Back‑to‑Top button ----------
+   Keeps it out of the normal flow and shows it on scroll */
+.back-to-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 200;                    /* above the dropdown */
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: .375rem;
+  padding: .5rem .75rem;
+  font-size: 1rem;
+  cursor: pointer;
+  opacity: 0;                      /* hidden by default */
+  visibility: hidden;              /* screen‑reader friendly */
+  transition: opacity .3s ease, transform .3s ease;
+  transform: translateY(20px);      /* subtle slide‑up */
+  box-shadow: 0 4px 8px rgba(0,0,0,.15);
+}
+
+/* Hover/focus state */
+.back-to-top:hover,
+.back-to-top:focus {
+  background: var(--primary);
+  transform: translateY(0);
+}
+
+/* When the button has the “show” class it becomes visible */
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+/* ── Navbar logo ── */
+.logo {
+  display: flex;          /* Align image & text side‑by‑side */
+  align-items: center;    /* Vertically centre them */
+  gap: 0.5rem;            /* Space between image & text */
+  font-weight: 700;       /* Your existing style */
+  font-size: 1.2rem;      /* Adjust if you need */
+}
+
+.logo img {
+  height: 2.2rem;         /* Keep the image small & tidy */
+  width: auto;            /* Preserve aspect ratio */
+  object-fit: contain;
+}
+
+/* ── Mobile‑specific tweak ── */
+@media (max-width: 480px) {
+  .logo img {
+    height: 1.6rem;       /* Smaller on tiny screens */
+  }
+}
+/* ── Participate section ── */
 .participate-section {
   padding: 2rem 1.5rem;
-  background: var(--bg-light);   /* now defined */
+  background: var(--bg-light);      /* or any neutral colour you like */
   margin-top: 3rem;
   border-top: 2px solid var(--primary);
 }
 .participate-section h2,
-.participate-section h3 { color: var(--primary); margin-bottom: .5rem; }
+.participate-section h3 {
+  color: var(--primary);
+  margin-bottom: .5rem;
+}
 .participate-section p,
-.participate-section li { line-height: 1.6; margin-bottom: 1rem; }
-.participate-section a { color: var(--link); text-decoration: underline; }
-.participate-section a:hover { color: var(--link-hover); text-decoration: none; }
-
+.participate-section li {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.participate-section a {
+  color: var(--link);
+  text-decoration: underline;
+}
+.participate-section a:hover,
+.participate-section a:focus {
+  color: var(--link-hover);
+  text-decoration: none;
+}
+/* Small tweak for the app link list */
 .app-links,
 .mapping-modes {
-  list-style: none; padding-left: 0;
+  list-style: none;
+  padding-left: 0;
 }
 .app-links li::before,
 .mapping-modes li::before {
@@ -127,8 +413,9 @@ a:hover, a:focus { color: var(--link-hover); text-decoration: none; }
   margin-right: .5rem;
   color: var(--primary);
 }
-
-/* Mobile tweak for the participate section */
+/* Responsive adjustment (optional) */
 @media (max-width: 480px) {
-  .participate-section { padding: 1.5rem 1rem; }
+  .participate-section {
+    padding: 1.5rem 1rem;
+  }
 }
