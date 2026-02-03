@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MeshCore – Florida LoRa Mesh</title>
+  <title>Florida MeshCore</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Standard favicon (PNG) -->
@@ -62,6 +62,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#features">Features</a></li>
       <li><a href="#region">Region</a></li>
+      <li><a href="#participate">Participate</a></li>
       <li><a href="#channels">Channels</a></li>   <!-- fixed -->
       <li><a href="#roles">Roles</a></li>
       <li><a href="#member-projects">Member Projects</a></li>
@@ -171,29 +172,80 @@
        target="_blank" rel="noopener noreferrer"
        class="btn secondary">Live Map</a>
     
-    <a href="https://map.mc.flmesh.us"
+    <a href="https://fld.meshmapper.net"
        target="_blank" rel="noopener noreferrer"
        class="btn secondary">Coverage Map</a>
     
+    <a href="https://map.mc.flmesh.us"
+       target="_blank" rel="noopener noreferrer"
+       class="btn secondary">Coverage Map (Legacy)</a>
+    
     <a href="https://map.mc.flmesh.us/wardrive"
        target="_blank" rel="noopener noreferrer"
-       class="btn secondary">Add Coverage (Wardrive)</a>
+       class="btn secondary">Add Coverage (Wardrive) (Legacy)</a>
 
-    <a href="https://map.mc.flmesh.us/howto"
+    <!--<a href="https://map.mc.flmesh.us/howto"
        target="_blank" rel="noopener noreferrer"
-       class="btn secondary">How to Wardrive</a>
+       class="btn secondary">How to Wardrive (Legacy)</a>-->
 
     <!-- Add an Observer -->
     <a href="https://analyzer.letsmesh.net/observer/onboard"
        target="_blank" rel="noopener noreferrer"
        class="btn secondary">Add an Observer</a>
-
   </div>
 
   <p>
     Want to add your own node or help maintain the local deployments? Join the Florida‑Mesh Discord
     (<a href="https://discord.com/invite/floridamesh" target="_blank">https://discord.com/invite/floridamesh</a>) or simply drop by the MeshCore Discord.
   </p>
+</section>
+
+<!-- ── REGION MAP CALL‑TO‑ACTION ── -->
+<section id="participate" class="participate-section">
+  <h2>Help Map Your Region</h2>
+
+  <p>
+    Want to add coverage on the map by wardriving? Below are the ways to participate.
+  </p>
+
+  <p>
+    <strong>Do not see your region on the map?</strong><br>
+    Go to <a href="https://fld.meshmapper.net/" target="_blank">https://fld.meshmapper.net/</a>, click the
+    <strong>About</strong> button on the top right, and click <strong>Onboard Your Region</strong>.
+  </p>
+
+  <p>
+    More information with onboarding your region can be found at
+    <a href="https://wiki.meshmapper.net/onboarding/" target="_blank">
+      https://wiki.meshmapper.net/onboarding/
+    </a>.
+  </p>
+
+  <p>
+    Once onboarded, let us know at <a href="mailto:KQ4WAA@pm.me">KQ4WAA@pm.me</a> and we will add your region
+    to the <a href="https://fld.meshmapper.net" target="_blank">Florida Coverage Map</a>.
+  </p>
+
+  <!-- 👉 Get the App -->
+  <h3>Get the App</h3>
+  <ul class="app-links">
+    <li><strong>iOS:</strong><a href="https://testflight.apple.com/join/nd3Rrkrb" target="_blank">Join TestFlight</a></li>
+    <li><strong>Android:</strong> Coming Soon to the Play Store</li>
+    <li><strong>APK (Android):</strong> Grab from <a href="https://github.com/MeshMapper/MeshMapper_Project/releases/" target="_blank">GitHub</a></li>
+  </ul>
+
+  <!-- 👉 Connect -->
+  <h3>Connect</h3>
+  <p>
+    Power on your <strong>MeshCore Companion</strong> → Open app → Tap <strong>Connect</strong> → Select via Bluetooth.
+  </p>
+
+  <!-- 👉 Mapping Modes -->
+  <h3>Mapping Modes</h3>
+  <ul class="mapping-modes">
+    <li><strong>Active</strong> – Sends messages to channel and listens for RX, limited slots per region to protect mesh load.</li>
+    <li><strong>Passive</strong> – Listens for mesh traffic and sends zero‑hop discovery requests.</li>
+  </ul>
 </section>
 
 <section id="channels" class="section">
@@ -390,22 +442,34 @@
 
     <p>
       The following settings are used to connect to the public Florida MQTT broker that feeds the
-      MeshCore coverage map and wardriving data.  If you want to contribute your own
-      coverage data or debug logs, add these environment variables to your custom broker client.
+      Florida Live Map.  If you want to be added to the Live Map, add these environment variables to the bottom of your .env.local.
       You can take a look at the
       <a href="https://github.com/Mambo430/mesh-map/blob/main/support/.env.local.example"
         target="_blank" rel="noopener">.env.local.example</a> file.
     </p>
 
     <pre class="code-block">
-MCTOMQTT_MQTT1_ENABLED=true
-MCTOMQTT_MQTT1_SERVER=mcmqtt.jntconnections.com
-MCTOMQTT_MQTT1_PORT=443
-MCTOMQTT_MQTT1_TRANSPORT=websockets
-MCTOMQTT_MQTT1_USE_TLS=true
-MCTOMQTT_MQTT1_USE_AUTH_TOKEN=true
-MCTOMQTT_MQTT1_TOKEN_AUDIENCE=mcmqtt.jntconnections.com
+# MQTT Broker 3 - Florida MQTT Broker (US)
+MCTOMQTT_MQTT3_ENABLED=true
+MCTOMQTT_MQTT3_SERVER=mcmqtt.jntconnections.com
+MCTOMQTT_MQTT3_PORT=443
+MCTOMQTT_MQTT3_TRANSPORT=websockets
+MCTOMQTT_MQTT3_USE_TLS=true
+MCTOMQTT_MQTT3_USE_AUTH_TOKEN=true
+MCTOMQTT_MQTT3_TOKEN_AUDIENCE=mcmqtt.jntconnections.com
     </pre>
+  </section>
+
+  <!-- Get Started -->
+  <section id="get-started" class="section">
+    <h2>Get Started</h2>
+    <p>Ready to build your first MeshCore node?</p>
+    <div class="cta-grid">
+      <a href="https://meshcore.co.uk" target="_blank" class="btn secondary">Official MeshCore Website</a>
+      <a href="https://github.com/meshcore-dev/MeshCore" target="_blank" class="btn secondary">GitHub Repo</a>
+      <a href="https://github.com/meshcore-dev/MeshCore/blob/main/docs/README.md" target="_blank" class="btn secondary">Documentation</a>
+      <a href="https://github.com/meshcore-dev/MeshCore/blob/main/examples" target="_blank" class="btn secondary">Examples</a>
+    </div>
   </section>
   
    <!-- FAQ -->
@@ -482,17 +546,6 @@ MCTOMQTT_MQTT1_TOKEN_AUDIENCE=mcmqtt.jntconnections.com
       <li>Tactical & security – military, law‑enforcement, private security.</li>
       <li>IoT & sensor networks – relay remote data from buoys, weather stations, and wildlife trackers.</li>
     </ul>
-  </section>
-
-  <!-- Get Started -->
-  <section id="get-started" class="section">
-    <h2>Get Started</h2>
-    <p>Ready to build your first MeshCore node?</p>
-    <div class="cta-grid">
-      <a href="https://github.com/meshcore-dev/MeshCore" target="_blank" class="btn secondary">GitHub Repo</a>
-      <a href="https://github.com/meshcore-dev/MeshCore/blob/main/docs/README.md" target="_blank" class="btn secondary">Documentation</a>
-      <a href="https://github.com/meshcore-dev/MeshCore/blob/main/examples" target="_blank" class="btn secondary">Examples</a>
-    </div>
   </section>
 
   <!-- Community -->
