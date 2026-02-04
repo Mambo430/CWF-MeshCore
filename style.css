@@ -375,3 +375,43 @@ footer a:hover { color: #ffc107; }
     height: 1.6rem;       /* Smaller on tiny screens */
   }
 }
+
+/* ── Badges ── */
+.badge {
+  display: inline-block;
+  padding: .25em .6em;
+  font-size: .75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: .2rem;
+  vertical-align: middle;
+  margin-left: .4rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.badge-new {
+  background: #e0f7fa;   /* light teal – feel free to use your brand color */
+  color: #00695c;        /* dark teal for contrast */
+  border: 1px solid #00695c;
+}
+
+/* ── Section styling to set it apart ── */
+#participate {
+  background: #f9fafb;          /* subtle light gray */
+  border-left: 4px solid #00838f; /* brand accent stripe */
+  padding: 2rem 1.5rem;
+}
+
+/* ── New‑instructions paragraph styling ── */
+.new-instructions {
+  font-weight: 600;
+  color: #004d40;                /* dark teal for emphasis */
+  margin-bottom: 1rem;
+}
+
+/* ── Optional: keep legacy links collapsed by default ── */
+#legacy-wardrive[hidden] {
+  display: none;
+}
+
