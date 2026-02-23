@@ -415,3 +415,20 @@ footer a:hover { color: #ffc107; }
   display: none;
 }
 
+/* 1️⃣  Map‑links container – flex layout */
+.map-links {
+  display: flex;               /* makes the <a>s flex items */
+  flex-wrap: wrap;             /* wrap to a new line when needed */
+  justify-content: center;     /* keep the row centered */
+  margin-top: 1.5rem;          /* move the block away from the map */
+  gap: 0.75rem;                /* space between every button */
+  /* optional: a maximum width for the container */
+  max-width: 100%;
+}
+
+/* 2️⃣  Button styling (you already have .btn.secondary) – just a tiny tweak */
+.btn.secondary {
+  white-space: nowrap;         /* keep the text on one line */
+  /* optional: set a min‑width so the buttons are more even */
+  min-width: 120px;
+}
